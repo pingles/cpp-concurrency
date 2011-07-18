@@ -1,11 +1,12 @@
-#include <iostream>
-#include <thread>
-
-void hello() {
-  std::cout << "Hello, Concurrent World!";
-}
-
-int main() {
-  std::thread t(hello);
-  t.join();
+#include <thread>  
+#include <iostream>  
+#include <string>  
+void greeting(std::string const& message)  
+{  
+  std::cout<<message<<std::endl;  
+}  
+int main()  
+{  
+  std::thread t(greeting,"hi!");  
+  t.join();  
 }
